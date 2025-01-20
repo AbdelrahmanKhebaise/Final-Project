@@ -3,14 +3,8 @@ import pygame
 from tkinter import *
 from tkinter import filedialog
 
-# Set the Pygame audio driver to 'dummy' if needed (for environments without sound support)
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
 # Initialize Pygame mixer
-try:
-    pygame.mixer.init()
-except pygame.error:
-    print("Warning: Audio device not available. Running in dummy mode.")
+pygame.mixer.init()
 
 # Function to play music
 def play_music():
@@ -64,7 +58,6 @@ label.pack(pady=10)
 song_listbox = Listbox(main_frame, width=50, height=10, selectmode=SINGLE, font=("Helvetica", 12))
 song_listbox.pack(pady=20)
 
-# Buttons for music control
 play_button = Button(main_frame, text="Play", width=10, height=2, font=("Helvetica", 12), command=play_music)
 play_button.pack(side=LEFT, padx=10, pady=20)
 
