@@ -41,8 +41,19 @@ def load_songs():
 def preload_songs():
     global songs_directory
     songs_directory = os.getcwd()  # Use the current directory
-    preloaded_song = "Taylor Swift - Blank Space (1).mp3"  # Name of the preloaded song
-    song_listbox.insert(END, preloaded_song)
+    preloaded_songs = [
+        "Taylor Swift - 22.mp3",
+        "Taylor Swift - Cruel Summer (Official Audio).mp3",
+        "Taylor Swift - Look What You Made Me Do.mp3",
+        "Taylor Swift - Love Story.mp3",
+        "Taylor Swift - Shake It Off.mp3",
+        "Taylor Swift - Style.mp3",
+        "Taylor Swift - We Are Never Ever Getting Back Together.mp3",
+        "Taylor Swift - Wildest Dreams.mp3",
+        "Taylor Swift - You Belong With Me.mp3"
+    ]
+    for song in preloaded_songs:
+        song_listbox.insert(END, song)
 
 # Create the main window
 root = Tk()
