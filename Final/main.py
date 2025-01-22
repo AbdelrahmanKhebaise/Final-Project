@@ -43,15 +43,15 @@ def preload_songs():
     songs_directory = os.getcwd()  # Use the current directory
     preloaded_songs = [
         "Taylor Swift - 22",
-        "Taylor Swift - Cruel Summer (Official Audio).mp3",
-        "Taylor Swift - Look What You Made Me Do.mp3",
-        "Taylor Swift - Love Story.mp3",
+        "Taylor Swift - Cruel Summer",
+        "Taylor Swift - Look What You Made Me Do",
+        "Taylor Swift - Love Story",
         "Taylor Swift - Blank Space",
-        "Taylor Swift - Shake It Off.mp3",
-        "Taylor Swift - Style.mp3",
-        "Taylor Swift - We Are Never Ever Getting Back Together.mp3",
-        "Taylor Swift - Wildest Dreams.mp3",
-        "Taylor Swift - You Belong With Me.mp3"
+        "Taylor Swift - Shake It Off",
+        "Taylor Swift - Style",
+        "Taylor Swift - We Are Never Ever Getting Back Together",
+        "Taylor Swift - Wildest Dreams",
+        "Taylor Swift - You Belong With Me"
     ]
     for song in preloaded_songs:
         song_listbox.insert(END, song)
