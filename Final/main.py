@@ -30,14 +30,22 @@ def resume_music():
 # Function to load songs from a directory
 def load_songs():
     global songs_directory
-    songs_directory = filedialog.askdirectory()  # Ask user to select a directory
-    if songs_directory:
-        # Clear the listbox
-        song_listbox.delete(0, END)
-        # Add all mp3 files in the directory to the listbox
-        for song in os.listdir(songs_directory):
-            if song.endswith(".mp3"):
-                song_listbox.insert(END, song)
+    song_files = filedialog.askopenfilenames(
+        title="Select Music Files", 
+        filetypes=[("All Files", "*.*"), ("MP3 Files", "*.mp3")]
+    )
+    
+    if song_files:
+        # Set the directory path from the first file selected
+        songs_directory = os.path.dirname(song_files[0])
+        
+        for song in song_files:
+            song_name = os.path.basename(song)
+            
+            # Check if the song is already in the listbox, if not add it
+            if song_name not in song_listbox.get(0, END):
+                song_listbox.insert(END, song_name)
+
 
 # Preload specific songs
 def preload_songs():
